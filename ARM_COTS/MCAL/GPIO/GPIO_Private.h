@@ -1,3 +1,15 @@
+/*********************************************
+ * Author:				Rober Maher
+ * Creation Data:		23 Feb, 2024
+ * Version:				v1.0
+ * Compiler:			GNU ARM-GCC
+ * Controller:			STM32F401CCU6
+ * Layer:				MCAL
+ ********************************************/
+/*********************************************
+ * Version	  Date				  Author				  Description
+ * v1.0		  23 Feb, 2024		Rober Maher			    Initial Creation
+*********************************************/
 #ifndef GPIO_PRIVATE_H
 #define GPIO_PRIVATE_H
 
@@ -12,7 +24,7 @@
 #define			GPIOA_LCKR				*((volatile u32 *)(GPIOA_BASE_ADDRESS + 0x1C))
 #define			GPIOA_AFRL				*((volatile u32 *)(GPIOA_BASE_ADDRESS + 0x20))
 #define			GPIOA_AFRH				*((volatile u32 *)(GPIOA_BASE_ADDRESS + 0x24))
-
+				
 #define			GPIOB_BASE_ADDRESS		0x40020400
 #define			GPIOB_MODER				*((volatile u32 *)(GPIOB_BASE_ADDRESS + 0x00))
 #define			GPIOB_OTYPER			*((volatile u32 *)(GPIOB_BASE_ADDRESS + 0x04))
@@ -24,7 +36,7 @@
 #define			GPIOB_LCKR				*((volatile u32 *)(GPIOB_BASE_ADDRESS + 0x1C))
 #define			GPIOB_AFRL				*((volatile u32 *)(GPIOB_BASE_ADDRESS + 0x20))
 #define			GPIOB_AFRH				*((volatile u32 *)(GPIOB_BASE_ADDRESS + 0x24))
-
+				
 #define			GPIOC_BASE_ADDRESS		0x40020800
 #define			GPIOC_MODER				*((volatile u32 *)(GPIOC_BASE_ADDRESS + 0x00))
 #define			GPIOC_OTYPER			*((volatile u32 *)(GPIOC_BASE_ADDRESS + 0x04))
