@@ -305,7 +305,31 @@ void GPIO_voidSetPinValue(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_VALUE_e pin
 
 u8 GPIO_u8GetPinValue(GPIO_PORT_e portID, GPIO_PIN_e pinID)
 {
+	u8 pinvalue;
 	
+	if ( (portID <= GPIO_PORTC) && (pinID <= PIN15) )
+	{
+		switch (portID)
+		{
+		case GPIO_PORTA:
+			PinValue = GET_BIT(GPIOA_IDR, pinID);
+			break;
+		
+		case GPIO_PORTB:
+			PinValue = GET_BIT(GPIOB_IDR, pinID);
+			break;
+			
+		case GPIO_PORTC:
+			PinValue = GET_BIT(GPIOC_IDR, pinID);
+			break;
+		}
+	}
+	else
+	{
+		// Do Nothing
+	}
+	
+	return pinvalue;
 }
 
 void GPIO_voidLockPin(GPIO_PORT_e portID, GPIO_PIN_e pinID)
