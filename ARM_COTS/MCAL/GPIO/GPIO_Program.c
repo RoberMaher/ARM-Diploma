@@ -9,6 +9,7 @@
 /*********************************************
  * Version	  Date				  Author				  Description
  * v1.0		  23 Feb, 2024		Rober Maher			    Initial Creation
+ * v2.0		  1  Mar, 2024		Rober Maher			    Solve the problems
 *********************************************/
 
 //Library Inclusion
@@ -44,25 +45,25 @@ void GPIO_voidSetPinMode(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_MODE_e pinMo
 				{
                     // If mode is input
 					case GPIO_INPUT:
-						CLR_BIT(GPIOA_MODER,(pinID*2);
+						CLR_BIT(GPIOA_MODER,(pinID*2));
 						CLR_BIT(GPIOA_MODER,((pinID*2)+1));
 					break;
 					
                     // If mode is output
 					case GPIO_OUTPUT:
-						CLR_BIT(GPIOA_MODER,(pinID*2);
+						CLR_BIT(GPIOA_MODER,(pinID*2));
 						SET_BIT(GPIOA_MODER,((pinID*2)+1));
 					break;
 					
                     // If mode is alternate function
 					case GPIO_ALTERNATE_FUNCTION:
-						SET_BIT(GPIOA_MODER,(pinID*2);
+						SET_BIT(GPIOA_MODER,(pinID*2));
 						CLR_BIT(GPIOA_MODER,((pinID*2)+1));
 					break;
 					
                     // If mode is analog
 					case GPIO_ANALOG:
-						SET_BIT(GPIOA_MODER,(pinID*2);
+						SET_BIT(GPIOA_MODER,(pinID*2));
 						SET_BIT(GPIOA_MODER,((pinID*2)+1));
 					break;
 				}
@@ -75,25 +76,25 @@ void GPIO_voidSetPinMode(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_MODE_e pinMo
 				{
                     // If mode is input
 					case GPIO_INPUT:
-						CLR_BIT(GPIOB_MODER,(pinID*2);
+						CLR_BIT(GPIOB_MODER,(pinID*2));
 						CLR_BIT(GPIOB_MODER,((pinID*2)+1));
 					break;
 					
                     // If mode is output
 					case GPIO_OUTPUT:
-						CLR_BIT(GPIOB_MODER,(pinID*2);
+						CLR_BIT(GPIOB_MODER,(pinID*2));
 						SET_BIT(GPIOB_MODER,((pinID*2)+1));
 					break;
 					
                     // If mode is alternate function
 					case GPIO_ALTERNATE_FUNCTION:
-						SET_BIT(GPIOB_MODER,(pinID*2);
+						SET_BIT(GPIOB_MODER,(pinID*2));
 						CLR_BIT(GPIOB_MODER,((pinID*2)+1));
 					break;
 					
                     // If mode is analog
 					case GPIO_ANALOG:
-						SET_BIT(GPIOB_MODER,(pinID*2);
+						SET_BIT(GPIOB_MODER,(pinID*2));
 						SET_BIT(GPIOB_MODER,((pinID*2)+1));
 					break;
 				}
@@ -106,28 +107,32 @@ void GPIO_voidSetPinMode(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_MODE_e pinMo
 				{
                     // If mode is input
 					case GPIO_INPUT:
-						CLR_BIT(GPIOC_MODER,(pinID*2);
+						CLR_BIT(GPIOC_MODER,(pinID*2));
 						CLR_BIT(GPIOC_MODER,((pinID*2)+1));
 					break;
 					
                     // If mode is output
 					case GPIO_OUTPUT:
-						CLR_BIT(GPIOC_MODER,(pinID*2);
+						CLR_BIT(GPIOC_MODER,(pinID*2));
 						SET_BIT(GPIOC_MODER,((pinID*2)+1));
 					break;
 					
                     // If mode is alternate function
 					case GPIO_ALTERNATE_FUNCTION:
-						SET_BIT(GPIOC_MODER,(pinID*2);
+						SET_BIT(GPIOC_MODER,(pinID*2));
 						CLR_BIT(GPIOC_MODER,((pinID*2)+1));
 					break;
 					
                     // If mode is analog
 					case GPIO_ANALOG:
-						SET_BIT(GPIOC_MODER,(pinID*2);
+						SET_BIT(GPIOC_MODER,(pinID*2));
 						SET_BIT(GPIOC_MODER,((pinID*2)+1));
 					break;
 				}
+			break;
+			
+			default:
+				//ERROR
 			break;
 		}
 	}
@@ -317,7 +322,7 @@ void GPIO_voidSetPinOutputSpeed(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_OUTPU
 void GPIO_voidSetPinValue(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_VALUE_e pinValue)
 {
     // Check if portID, pinID, and pinValue are within valid range
-    if ((portID <= GPIO_PORTC) && (pinID <= PIN15) && (pinValue <= DIO_SET))
+    if ((portID <= GPIO_PORTC) && (pinID <= PIN15) && (pinValue <= GPIO_SET))
     {
         // Switch on the port
         switch (portID)

@@ -9,6 +9,7 @@
 /*********************************************
  * Version	  Date				  Author				  Description
  * v1.0		  23 Feb, 2024		Rober Maher			    Initial Creation
+ * v2.0		  1  Mar, 2024		Rober Maher			    Solve the problems
 *********************************************/
 #ifndef GPIO_INTERFACE_H
 #define GPIO_INTERFACE_H
@@ -58,8 +59,8 @@ typedef enum{
 }GPIO_OUTPUT_SPEED_e;
 
 typedef enum{
-	DIO_RESET=0,	//low
-	DIO_SET 		//HIGH
+	GPIO_RESET=0,	//low
+	GPIO_SET 		//HIGH
 }GPIO_VALUE_e;
 	
 
