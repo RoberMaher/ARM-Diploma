@@ -1,3 +1,16 @@
+/*********************************************
+ * Author:				Rober Maher
+ * Creation Data:		23 Feb, 2024
+ * Version:				v1.0
+ * Compiler:			GNU ARM-GCC
+ * Controller:			STM32F401CCU6
+ * Layer:				MCAL
+ ********************************************/
+/*********************************************
+ * Version	  Date				  Author				  Description
+ * v1.0		  23 Feb, 2024		Rober Maher			    Initial Creation
+ * v2.0		  1  Mar, 2024		Rober Maher			    ADD define for BUSTYPE
+*********************************************/
 #ifndef RCC_INTERFACE_H
 #define RCC_INTERFACE_H
 
@@ -5,6 +18,10 @@
 #define 	RCC_HSI							0
 #define 	RCC_HSE							1
 #define 	RCC_PLL							2
+
+#define 	RCC_AHB		                    0
+#define 	RCC_APB1	                    1
+#define 	RCC_APB2	                    2
 		
 #define		RCC_CR_HSION					0
 #define		RCC_CR_HSIRDY					1
@@ -105,9 +122,9 @@
 #define		RCC_AHB1ENR_DMA2EN				22
 
 #define		RCC_APB1ENR_TIM2EN				0
-#define		RCC_APB1ENR_TIM2EN				1
-#define		RCC_APB1ENR_TIM3EN				2
-#define		RCC_APB1ENR_TIM4EN				3
+#define		RCC_APB1ENR_TIM3EN				1
+#define		RCC_APB1ENR_TIM4EN				2
+#define		RCC_APB1ENR_TIM5EN				3
 #define		RCC_APB1ENR_WWDGEN				11
 #define		RCC_APB1ENR_SPI2EN				14
 #define		RCC_APB1ENR_SPI3EN				15
