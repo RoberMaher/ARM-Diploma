@@ -26,7 +26,7 @@
 #include "../include/STK_Cfg.h"
 
 
-void MSTK_voidInit(void)
+void STK_voidInit(void)
 {
     // Choose the Clock Source For Systick
     #if STK_CLK_SRC == STK_AHB
@@ -56,7 +56,7 @@ void MSTK_voidInit(void)
     #endif
 }
 
-void MSTK_voidSetBusyWait(u32 Copy_u32Ticks)
+void STK_voidSetBusyWait(u32 Copy_u32Ticks)
 {
     // Load The Ticks Value into the LOAD Register
     STK -> LOAD = Copy_u32Ticks;
