@@ -15,10 +15,10 @@
 #define GPIO_INTERFACE_H
 
 typedef enum{
-	GPIO_PORTA=0,
-	GPIO_PORTB,
-	GPIO_PORTC
-}GPIO_PORT_e;
+	MGPIO_PORTA=0,
+	MGPIO_PORTB,
+	MGPIO_PORTC
+}MGPIO_PORT_e;
 
 typedef enum{
 	PIN0=0,
@@ -37,45 +37,45 @@ typedef enum{
 	PIN13,
 	PIN14,
 	PIN15
-}GPIO_PIN_e;
+}MGPIO_PIN_e;
 
 typedef enum{
-	GPIO_INPUT=0,
-	GPIO_OUTPUT,
-	GPIO_ALTERNATE_FUNCTION,
-	GPIO_ANALOG
-}GPIO_MODE_e;
+	MGPIO_INPUT=0,
+	MGPIO_OUTPUT,
+	MGPIO_ALTERNATE_FUNCTION,
+	MGPIO_ANALOG
+}MGPIO_MODE_e;
 
 typedef enum{
-	GPIO_OUTPUT_PUSH_PULL=0,
-	GPIO_OUTPUT_OPEN_DRAIN
-}GPIO_OUTPUT_MODE_e;
+	MGPIO_OUTPUT_PUSH_PULL=0,
+	MGPIO_OUTPUT_OPEN_DRAIN
+}MGPIO_OUTPUT_MODE_e;
 
 typedef enum{
-	GPIO_OUTPUT_LOW=0,
-	GPIO_OUTPUT_MEDIUM,
-	GPIO_OUTPUT_HIGH,
-	GPIO_OUTPUT_VERY_HIGH
-}GPIO_OUTPUT_SPEED_e;
+	MGPIO_OUTPUT_LOW=0,
+	MGPIO_OUTPUT_MEDIUM,
+	MGPIO_OUTPUT_HIGH,
+	MGPIO_OUTPUT_VERY_HIGH
+}MGPIO_OUTPUT_SPEED_e;
 
 typedef enum{
-	GPIO_RESET=0,	//low
-	GPIO_SET 		//HIGH
-}GPIO_VALUE_e;
+	MGPIO_RESET=0,	//low
+	MGPIO_SET 		//HIGH
+}MGPIO_VALUE_e;
 	
 
-void GPIO_voidSetPinMode(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_MODE_e pinMode);
-void GPIO_voidSetPinOutputMode(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_OUTPUT_MODE_e pinOutputMode);
-void GPIO_voidSetPinOutputSpeed(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_OUTPUT_SPEED_e pinOutputSpeed);
-void GPIO_voidSetPinValue(GPIO_PORT_e portID, GPIO_PIN_e pinID, GPIO_VALUE_e pinValue);
-u16 GPIO_u8GetPinValue(GPIO_PORT_e portID, GPIO_PIN_e pinID);
-void GPIO_voidLockPin(GPIO_PORT_e portID, GPIO_PIN_e pinID);
-void GPIO_voidSetPortMode(GPIO_PORT_e portID, GPIO_MODE_e portMode);
-void GPIO_voidSetPortOutputMode(GPIO_PORT_e portID, GPIO_OUTPUT_MODE_e portOutputMode);
-void GPIO_voidSetPortOutputSpeed(GPIO_PORT_e portID, GPIO_OUTPUT_SPEED_e portOutputSpeed);
-void GPIO_voidSetPortValue(GPIO_PORT_e portID, GPIO_VALUE_e portValue);
-u16 GPIO_u8GetPortValue(GPIO_PORT_e portID);
-void GPIO_voidLockPort(GPIO_PORT_e portID);
+void MGPIO_voidSetPinMode(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, MGPIO_MODE_e pinMode);
+void MGPIO_voidSetPinOutputMode(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, MGPIO_OUTPUT_MODE_e pinOutputMode);
+void MGPIO_voidSetPinOutputSpeed(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, MGPIO_OUTPUT_SPEED_e pinOutputSpeed);
+void MGPIO_voidSetPinValue(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, MGPIO_VALUE_e pinValue);
+u16 MGPIO_u8GetPinValue(MGPIO_PORT_e portID, MGPIO_PIN_e pinID);
+void MGPIO_voidLockPin(MGPIO_PORT_e portID, MGPIO_PIN_e pinID);
+void MGPIO_voidSetPortMode(MGPIO_PORT_e portID, MGPIO_MODE_e portMode);
+void MGPIO_voidSetPortOutputMode(MGPIO_PORT_e portID, MGPIO_OUTPUT_MODE_e portOutputMode);
+void MGPIO_voidSetPortOutputSpeed(MGPIO_PORT_e portID, MGPIO_OUTPUT_SPEED_e portOutputSpeed);
+void MGPIO_voidSetPortValue(MGPIO_PORT_e portID, MGPIO_VALUE_e portValue);
+u16 MGPIO_u8GetPortValue(MGPIO_PORT_e portID);
+void MGPIO_voidLockPort(MGPIO_PORT_e portID);
 
 
 
