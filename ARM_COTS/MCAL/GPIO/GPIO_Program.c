@@ -37,7 +37,7 @@ void MGPIO_voidSetPinMode(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, MGPIO_MODE_e p
 	// Ensure portID and pinID are within valid range
 	if((portID <= MGPIO_PORTC) && (pinID <= PIN15))
 	{
-		// Switch on the port
+		// Switch on the portA
 		switch(portID)
 		{
 		// If port is A
