@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "stk_interface.h": "c"
+        "stk_interface.h": "c",
+        "gpio_interface.h": "c"
     }
 }
