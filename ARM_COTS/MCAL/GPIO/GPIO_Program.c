@@ -25,8 +25,8 @@
 
 //Self Files Inclusion
 #include "../include/GPIO_Interface.h"
-#include "../include/GPIO_Cfg.h"
 #include "../include/GPIO_Private.h"
+#include "../include/GPIO_Cfg.h"
 
 
 //Pre_Build Configuration
