@@ -11,8 +11,8 @@
  * v1.0		  22 Mar, 2024	    Rober Maher		        Initial Creation
  * v1.1		  21 Apr, 2024	    Rober Maher		        Editing in Names Of GPIO ports
 *********************************************/
-#ifndef LEDMAT_CONFIG_H
-#define LEDMAT_CONFIG_H
+#ifndef LEDMAT_CFG_H
+#define LEDMAT_CFG_H
 
 
 #define     HLEDMAT_COL0_PORT_PIN       MGPIO_PORTA,PIN0

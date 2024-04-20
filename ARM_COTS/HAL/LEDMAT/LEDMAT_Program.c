@@ -18,9 +18,9 @@
 #include "../include/STK_Interface.h"
 
 
-#include "../include/LEDMAT_interface.h"
-#include "../include/LEDMAT_config.h"
-#include "../include/LEDMAT_private.h"
+#include "../include/LEDMAT_Interface.h"
+#include "../include/LEDMAT_Private.h"
+#include "../include/LEDMAT_Cfg.h"
 
 
 
