@@ -13,9 +13,9 @@
 #include "../include/STD_TYPES.h"
 #include "../include/BIT_MATH.h"
 
-#include "../include/EXTI_interface.h"
-#include "../include/EXTI_private.h"
-#include "../include/EXTI_config.h"
+#include "../include/EXTI_Interface.h"
+#include "../include/EXTI_Private.h"
+#include "../include/EXTI_Cfg.h"
 
 // static void (*EXTI0_pNotificationFunction)(void) = NULLPTR;
 // static void (*EXTI1_pNotificationFunction)(void) = NULLPTR;
