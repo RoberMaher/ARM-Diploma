@@ -9,8 +9,9 @@
 /*********************************************
  * Version	  Date				  Author				  Description
  * v1.0		  23 Feb, 2024		Rober Maher			    Initial Creation
- * v2.0		  1  Mar, 2024		Rober Maher			    Solve the problems
- * v3.0		  2  Mar, 2024		Rober Maher			    Solve the MODER problem
+ * v1.1		  1  Mar, 2024		Rober Maher			    Solve the problems
+ * v1.2		  2  Mar, 2024		Rober Maher			    Solve the MODER problem
+ * v2.0		  19 Apr, 2024		Rober Maher			    Adding Alternative Function
  *********************************************/
 
 //Library Inclusion
@@ -618,4 +619,37 @@ u16 MGPIO_u8GetPortValue(MGPIO_PORT_e portID)
 void MGPIO_voidLockPort(MGPIO_PORT_e portID)
 {
 
+}
+
+/**
+ * @brief A Function to set the alternative function for a pin
+ *
+ * @param portID: GPIO_PORTA, GPIO_PORTB, GPIO_PORTC
+ * @param pinID: GPIO_PIN0, GPIO_PIN1, ..., GPIO_PIN15
+ * @param AlternativeFunctionID: GPIO_AF00, GPIO_AF01, ..., GPIO_AF15
+ */
+void MGPIO_voidSetAlternativeFunction(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, Alternative_Function_e AlternativeFunctionID)
+{
+	switch (portID)
+	{
+	case MGPIO_PORTA:
+		if(pinID <= PIN7 && pinID >= PIN0)
+		{
+			GPIOA_AFRL &= ~(AF_MASK << (pinID * AF_BITS_OFFSET));
+			GPIOA_AFRL |= (AlternativeFunctionID << (pinID * AF_BITS_OFFSET));
+		}
+		else if(pinID <= PIN15 && pinID >= PIN8)
+		{
+			GPIOA_AFRH &= ~(AF_MASK << ((pinID-AF_HIGH_BITS_OFFSET) * AF_BITS_OFFSET));
+			GPIOA_AFRH |= (AlternativeFunctionID << ((pinID-AF_HIGH_BITS_OFFSET) * AF_BITS_OFFSET));
+		}
+		else
+		{
+			//Error
+		}
+		break;
+
+	default:
+		break;
+	}
 }

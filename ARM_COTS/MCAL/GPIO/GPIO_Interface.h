@@ -62,6 +62,25 @@ typedef enum{
 	MGPIO_RESET=0,	//low
 	MGPIO_SET 		//HIGH
 }MGPIO_VALUE_e;
+
+typedef enum{
+	AF00=0,
+	AF01,
+	AF02,
+	AF03,
+	AF04,
+	AF05,
+	AF06,
+	AF07,
+	AF08,
+	AF09,
+	AF10,
+	AF11,
+	AF12,
+	AF13,
+	AF14,
+	AF15
+}Alternative_Function_e;
 	
 
 void MGPIO_voidSetPinMode(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, MGPIO_MODE_e pinMode);
@@ -76,6 +95,7 @@ void MGPIO_voidSetPortOutputSpeed(MGPIO_PORT_e portID, MGPIO_OUTPUT_SPEED_e port
 void MGPIO_voidSetPortValue(MGPIO_PORT_e portID, MGPIO_VALUE_e portValue);
 u16 MGPIO_u8GetPortValue(MGPIO_PORT_e portID);
 void MGPIO_voidLockPort(MGPIO_PORT_e portID);
+void MGPIO_voidSetAlternativeFunction(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, Alternative_Function_e AlternativeFunctionID);
 
 
 

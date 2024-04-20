@@ -7,8 +7,9 @@
  * Layer:				MCAL
  ********************************************/
 /*********************************************
- * Version	  Date				  Author				  Description
- * v1.0		  23 Feb, 2024		Rober Maher			    Initial Creation
+ * Version	 	 Date				  Author				  Description
+ * v1.0		  23 Feb, 2024			Rober Maher			    Initial Creation
+ * v2.0		  19 Apr, 2024			Rober Maher		  		Adding the Definition of the AFR registers, and some new definitions
 *********************************************/
 #ifndef GPIO_PRIVATE_H
 #define GPIO_PRIVATE_H
@@ -49,5 +50,8 @@
 #define			GPIOC_AFRL				*((volatile u32 *)(GPIOC_BASE_ADDRESS + 0x20))
 #define			GPIOC_AFRH				*((volatile u32 *)(GPIOC_BASE_ADDRESS + 0x24))
 
+#define     AF_MASK					0b1111
+#define     AF_BITS_OFFSET			4
+#define     AF_HIGH_BITS_OFFSET		8
 
 #endif
