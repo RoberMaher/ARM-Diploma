@@ -13,9 +13,9 @@
 #include "../include/STD_TYPES.h"
 #include "../include/BIT_MATH.h"
 
-#include "../include/SPI_interface.h"
-#include "../include/SPI_private.h"
-#include "../include/SPI_config.h"
+#include "../include/SPI_Interface.h"
+#include "../include/SPI_Private.h"
+#include "../include/SPI_Cfg.h"
 
 void MSPI1_voidInit(void)
 {
