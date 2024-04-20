@@ -33,4 +33,7 @@ typedef struct
 #define     STK_ENABLE     			0
 #define     STK_DISABLE     		1
 
+#define     SINGLE_INTERVAL         0
+#define     PERIODIC_INTERVAL       1
+
 #endif
