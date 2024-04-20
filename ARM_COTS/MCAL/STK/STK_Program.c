@@ -9,7 +9,17 @@
 /*********************************************
  * Version	  Date				  Author				  Description
  * v1.0		  02 MAR, 2024		Rober Maher			    Initial Creation
+ * 
  * v2.0		  21 Apr, 2024	    Rober Maher		        Add New APIs 
+ *                                                        - MSTK_u32GetRemainingTime
+ *                                                        - MSTK_u32GetElapsedTime
+ *                                                        - MSTK_voidResetTimer
+ *                                                        - MSTK_voidSetPreloadValue
+ *                                                        - MSTK_voidSetSingleInterval
+ *                                                        - MSTK_voidSetPeriodicInterval
+ *                                                        - SysTick_Handler
+ * 
+ * v3.0		  22 Apr, 2024	    Rober Maher		        Add New APIs 
  *                                                        - MSTK_voidSTKEnable
  *                                                        - MSTK_voidSTKDisable
 *********************************************/
