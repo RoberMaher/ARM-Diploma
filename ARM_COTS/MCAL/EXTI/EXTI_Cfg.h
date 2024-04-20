@@ -10,8 +10,8 @@
  * Version	  Date				  Author				  Description
  * v1.0	    19 Apr, 2024     	Rober Maher		      Initial Creation
 *********************************************/
-#ifndef EXTI_CONFIG_H
-#define EXTI_CONFIG_H
+#ifndef EXTI_CFG_H
+#define EXTI_CFG_H
 
 
 
