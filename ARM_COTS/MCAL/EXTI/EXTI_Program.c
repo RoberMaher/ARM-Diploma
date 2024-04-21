@@ -9,6 +9,7 @@
 /*********************************************
  * Version	  Date				  Author				  Description
  * v1.0	    19 Apr, 2024     	Rober Maher		      Initial Creation
+ * v1.0	    21 Apr, 2024     	Rober Maher		      Fix Problem of clearance flage
 *********************************************/
 #include "../include/STD_TYPES.h"
 #include "../include/BIT_MATH.h"
@@ -93,19 +94,23 @@ void EXTI0_IRQHandler(void)
     {
         // Do Nothing
     }
+    // Flag Clearance
+    SET_BIT(EXTI->PR, 0);
 }
 
 // ISR For EXTI1
 void EXTI1_IRQHandler(void)
 {
-    if(EXTI1_pNotificationFunction != NULLPTR)
+    if(EXTI_pNotificationFunction[1] != NULLPTR)
     {
-        EXTI1_pNotificationFunction();
+    	EXTI_pNotificationFunction[1]();
     }
     else
     {
         // Do Nothing
     }
+    // Flag Clearance
+    SET_BIT(EXTI->PR, 1);
 }
 
 
