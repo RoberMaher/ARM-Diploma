@@ -19,7 +19,7 @@
 
 void MSPI1_voidInit(void)
 {
-    /*Setup GPIO Pins (delayed)*/
+	MSPI1->CR1 = 0x47;
 }
 
 u8 MSPI1_u8TrancieveSynchronous(u8 Copy_u8Data)
