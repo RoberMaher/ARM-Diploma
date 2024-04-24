@@ -85,7 +85,7 @@ void HTFT_voidSetWindow(u8 Copy_u8X0, u8 Copy_u8X1, u8 Copy_u8Y0, u8 Copy_u8Y1)
 
 void HTFT_voidDisplayImage(u16 * Copy_pu8Image)
 {
-    u16 Local_u8LoopCounter = 0;
+    u16 Local_u16LoopCounter = 0;
     u8 Local_u8Data;
     HTFT_voidSetWindow(0, 127, 0, 159);
     // Send Write RAM Command
@@ -93,10 +93,10 @@ void HTFT_voidDisplayImage(u16 * Copy_pu8Image)
     for(Local_u8LoopCounter = 0; Local_u8LoopCounter < 20480; Local_u8LoopCounter++)
     {
         // Send MSB First
-        Local_u8Data = (u16)(Copy_pu8Image[Local_u8LoopCounter] >> 8);
+        Local_u8Data = (u8)(Copy_pu8Image[Local_u8LoopCounter] >> 8);
         HTFT_voidSendData(Local_u8Data);
         // Send LSB Then
-        Local_u8Data = (u16)Copy_pu8Image[Local_u8LoopCounter];
+        Local_u8Data = (u8)Copy_pu8Image[Local_u8LoopCounter];
         HTFT_voidSendData(Local_u8Data);
     }
 }
