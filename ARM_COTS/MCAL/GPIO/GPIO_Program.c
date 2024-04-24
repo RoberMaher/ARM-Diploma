@@ -12,6 +12,7 @@
  * v1.1		  1  Mar, 2024		Rober Maher			    Solve the problems
  * v1.2		  2  Mar, 2024		Rober Maher			    Solve the MODER problem
  * v2.0		  19 Apr, 2024		Rober Maher			    Adding Alternative Function
+ * v3.0		  24 Apr, 2024		Rober Maher				Adding Toggle Function
  *********************************************/
 
 //Library Inclusion
@@ -37,7 +38,7 @@ void MGPIO_voidSetPinMode(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, MGPIO_MODE_e p
 	// Ensure portID and pinID are within valid range
 	if((portID <= MGPIO_PORTC) && (pinID <= PIN15))
 	{
-		// Switch on the portA
+		// Switch on the port
 		switch(portID)
 		{
 		// If port is A
@@ -387,6 +388,37 @@ void MGPIO_voidSetPinValue(MGPIO_PORT_e portID, MGPIO_PIN_e pinID, MGPIO_VALUE_e
 	}
 }
 
+// Function to Toggle the pin of a specific pin
+void MGPIO_voidTogglePin(MGPIO_PORT_e portID, MGPIO_PIN_e pinID)
+{
+	// Check if portID, pinID, and pinValue are within valid range
+	if ((portID <= MGPIO_PORTC) && (pinID <= PIN15))
+	{
+		// Switch on the port
+		switch (portID)
+		{
+		// If port is A
+		case MGPIO_PORTA:
+			TOG_BIT(GPIOA_ODR,pinID);
+			break;
+
+			// If port is B
+		case MGPIO_PORTB:
+			TOG_BIT(GPIOB_ODR,pinID);
+			break;
+
+			// If port is C
+		case MGPIO_PORTC:
+			TOG_BIT(GPIOC_ODR,pinID);
+			break;
+		}
+	}
+	else
+	{
+		// Do Nothing
+	}
+}
+
 // Function to get the pin value (reset , set) of a specific pin
 u16 MGPIO_u8GetPinValue(MGPIO_PORT_e portID, MGPIO_PIN_e pinID)
 {
@@ -582,6 +614,26 @@ void MGPIO_voidSetPortValue(MGPIO_PORT_e portID, MGPIO_VALUE_e portValue)
 	{
 		// Do Nothing
 	}
+}
+
+// Function to Toggle all pins of a specific GPIO port
+void MGPIO_voidTogglePort(MGPIO_PORT_e portID)
+{
+    switch (portID)
+    {
+        case MGPIO_PORTA:
+            GPIOA_ODR ^= TOGGLE_MASK; // Toggle all bits in GPIOA
+            break;
+        case MGPIO_PORTB:
+            GPIOB_ODR ^= TOGGLE_MASK; // Toggle all bits in GPIOB
+            break;
+        case MGPIO_PORTC:
+            GPIOC_ODR ^= TOGGLE_MASK; // Toggle all bits in GPIOC
+            break;
+        default:
+            // Handle error or invalid port
+            break;
+    }
 }
 
 // Function to get the port value (reset , set) of a specific port

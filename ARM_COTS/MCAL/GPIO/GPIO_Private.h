@@ -50,6 +50,7 @@
 #define			GPIOC_AFRL				*((volatile u32 *)(GPIOC_BASE_ADDRESS + 0x20))
 #define			GPIOC_AFRH				*((volatile u32 *)(GPIOC_BASE_ADDRESS + 0x24))
 
+#define     TOGGLE_MASK				0xFFFF
 #define     AF_MASK					0b1111
 #define     AF_BITS_OFFSET			4
 #define     AF_HIGH_BITS_OFFSET		8
